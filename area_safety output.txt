@@ -1,0 +1,738 @@
+PS C:\Users\tejav\OneDrive\Desktop\Ds using python for ai> python area_safety.py area_safety.csv         
+Loading data from area_safety.csv ...
+
+Preprocessing complete. Columns after preprocessing:
+
+['Number of wine shops near to that area?', 'Where is the area located?', 'What is the usual crowd level in this area?', 'Is this area known for criminal activity?', 'Does the area have proper street lighting?', 'Is this area is located to nearby police station?', 'What best describes the condition of roads and traffic in the area?', 'Is there a graveyard in or near the area?', 'Do you consider this area to be safe?', 'surveillance_both_cctv_and_security_personnel', 'surveillance_cctv_cameras', 'surveillance_no_surveillance', 'surveillance_security_personnel', 'smuggle_drug_smuggling', 'smuggle_alcohol_smuggling', 'smuggle_human_trafficking', 'smuggle_no_known_smuggling_activity', 'What_type_of_uncrowded_area_is_located_nearby__Abandoned Building/Construction Site, Industrial Area', 'What_type_of_uncrowded_area_is_located_nearby__Forest', 'What_type_of_uncrowded_area_is_located_nearby__Industrial Area', 'What_type_of_uncrowded_area_is_located_nearby__Lake or River Bank', 'What_type_of_uncrowded_area_is_located_nearby__No, There is no uncrowded area nearby', 'What_type_of_uncrowded_area_is_located_nearby__Open Field', 'What_type_of_uncrowded_area_is_located_nearby__Open Field, Abandoned Building/Construction Site', 'What_type_of_uncrowded_area_is_located_nearby__Open Field, Lake or River Bank', 'What_type_of_uncrowded_area_is_located_nearby__Park or Garden', 'What_type_of_uncrowded_area_is_located_nearby__other', 'What_transportation_facilities_are_available_in_the_area__Auto', 'What_transportation_facilities_are_available_in_the_area__Auto stand', 'What_transportation_facilities_are_available_in_the_area__Auto stand ', 'What_transportation_facilities_are_available_in_the_area__Bus', 'What_transportation_facilities_are_available_in_the_area__Bus stop', 'What_transportation_facilities_are_available_in_the_area__Bus stop ', 'What_transportation_facilities_are_available_in_the_area__Metro station ', 'What_transportation_facilities_are_available_in_the_area__No', 'What_transportation_facilities_are_available_in_the_area__Railway station ', 'What_transportation_facilities_are_available_in_the_area__other', 'What_communication_facilities_are_available_in_the_area__Internet ', 'What_communication_facilities_are_available_in_the_area__Internet availability ', 'What_communication_facilities_are_available_in_the_area__Internet availablity ', 'What_communication_facilities_are_available_in_the_area__Mobile ', 'What_communication_facilities_are_available_in_the_area__Mobile network ', 'What_communication_facilities_are_available_in_the_area__Mobile network coverage', 'What_communication_facilities_are_available_in_the_area__Mobile network coverage ', 'What_communication_facilities_are_available_in_the_area__No', 'What_communication_facilities_are_available_in_the_area__Public phone booths', 'What_communication_facilities_are_available_in_the_area__other']
+
+====== DESCRIPTIVE ANALYSIS ======
+
+Dataset shape: 373 rows, 47 columns
+
+                                                    count unique    top freq      mean  ...  min  25%  50%  75%  max
+Number of wine shops near to that area?             373.0    NaN    NaN  NaN  2.662198  ...  1.0  1.0  2.0  4.0  6.0   
+Where is the area located?                          373.0    NaN    NaN  NaN  0.420912  ...  0.0  0.0  0.0  1.0  1.0   
+What is the usual crowd level in this area?         373.0    NaN    NaN  NaN  1.683646  ...  0.0  0.0  2.0  3.0  4.0   
+Is this area known for criminal activity?           373.0    NaN    NaN  NaN -0.029491  ... -1.0 -1.0  0.0  1.0  1.0   
+Does the area have proper street lighting?          373.0    NaN    NaN  NaN  0.557641  ...  0.0  0.0  1.0  1.0  1.0   
+Is this area is located to nearby police station?   373.0    NaN    NaN  NaN  0.396783  ...  0.0  0.0  0.0  1.0  1.0   
+What best describes the condition of roads and ...  373.0    NaN    NaN  NaN  2.024129  ...  0.0  1.0  2.0  3.0  4.0   
+Is there a graveyard in or near the area?           373.0    NaN    NaN  NaN  0.605898  ...  0.0  0.0  1.0  1.0  1.0   
+Do you consider this area to be safe?               373.0    NaN    NaN  NaN  0.402145  ...  0.0  0.0  0.0  1.0  1.0   
+surveillance_both_cctv_and_security_personnel       373.0    NaN    NaN  NaN  0.179625  ...  0.0  0.0  0.0  0.0  1.0   
+surveillance_cctv_cameras                           373.0    NaN    NaN  NaN  0.214477  ...  0.0  0.0  0.0  0.0  1.0   
+surveillance_no_surveillance                        373.0    NaN    NaN  NaN  0.490617  ...  0.0  0.0  0.0  1.0  1.0   
+surveillance_security_personnel                     373.0    NaN    NaN  NaN  0.115282  ...  0.0  0.0  0.0  0.0  1.0   
+smuggle_drug_smuggling                              373.0    NaN    NaN  NaN  0.225201  ...  0.0  0.0  0.0  0.0  1.0   
+smuggle_alcohol_smuggling                           373.0    NaN    NaN  NaN  0.380697  ...  0.0  0.0  0.0  1.0  1.0   
+smuggle_human_trafficking                           373.0    NaN    NaN  NaN  0.198391  ...  0.0  0.0  0.0  0.0  1.0   
+smuggle_no_known_smuggling_activity                 373.0    NaN    NaN  NaN  0.423592  ...  0.0  0.0  0.0  1.0  1.0   
+What_type_of_uncrowded_area_is_located_nearby__...    373      2  False  366       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_type_of_uncrowded_area_is_located_nearby__...    373      2  False  360       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_type_of_uncrowded_area_is_located_nearby__...    373      2  False  360       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_type_of_uncrowded_area_is_located_nearby__...    373      2  False  344       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_type_of_uncrowded_area_is_located_nearby__...    373      2  False  284       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_type_of_uncrowded_area_is_located_nearby__...    373      2  False  332       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_type_of_uncrowded_area_is_located_nearby__...    373      2  False  367       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_type_of_uncrowded_area_is_located_nearby__...    373      2  False  364       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_type_of_uncrowded_area_is_located_nearby__...    373      2  False  359       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_type_of_uncrowded_area_is_located_nearby__...    373      2  False  248       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_transportation_facilities_are_available_in...    373      2  False  359       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_transportation_facilities_are_available_in...    373      2  False  352       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_transportation_facilities_are_available_in...    373      2  False  360       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_transportation_facilities_are_available_in...    373      2  False  363       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_transportation_facilities_are_available_in...    373      2  False  328       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_transportation_facilities_are_available_in...    373      2  False  340       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_transportation_facilities_are_available_in...    373      2  False  359       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_transportation_facilities_are_available_in...    373      2  False  358       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_transportation_facilities_are_available_in...    373      2  False  363       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_transportation_facilities_are_available_in...    373      2   True  191       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_communication_facilities_are_available_in_...    373      2  False  363       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_communication_facilities_are_available_in_...    373      2  False  357       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_communication_facilities_are_available_in_...    373      2  False  364       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_communication_facilities_are_available_in_...    373      2  False  364       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_communication_facilities_are_available_in_...    373      2  False  330       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_communication_facilities_are_available_in_...    373      2  False  354       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_communication_facilities_are_available_in_...    373      2  False  332       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_communication_facilities_are_available_in_...    373      2  False  363       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_communication_facilities_are_available_in_...    373      2  False  360       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+What_communication_facilities_are_available_in_...    373      2   True  192       NaN  ...  NaN  NaN  NaN  NaN  NaN   
+
+[47 rows x 11 columns]
+
+Value counts for each column:
+
+Number of wine shops near to that area?:
+Number of wine shops near to that area?
+1    110
+3     91
+2     77
+4     45
+6     26
+5     24
+Name: count, dtype: int64
+
+Where is the area located?:
+Where is the area located?
+0    216
+1    157
+Name: count, dtype: int64
+
+What is the usual crowd level in this area?:
+What is the usual crowd level in this area?
+0    111
+2     77
+1     73
+4     65
+3     47
+Name: count, dtype: int64
+
+Is this area known for criminal activity?:
+Is this area known for criminal activity?
+ 0    132
+-1    126
+ 1    115
+Name: count, dtype: int64
+
+Does the area have proper street lighting?:
+Does the area have proper street lighting?
+1    208
+0    165
+Name: count, dtype: int64
+
+Is this area is located to nearby police station?:
+Is this area is located to nearby police station?
+0    225
+1    148
+Name: count, dtype: int64
+
+What best describes the condition of roads and traffic in the area?:
+What best describes the condition of roads and traffic in the area?
+0    80
+4    79
+3    77
+2    71
+1    66
+Name: count, dtype: int64
+
+Is there a graveyard in or near the area?:
+Is there a graveyard in or near the area?
+1    226
+0    147
+Name: count, dtype: int64
+
+Do you consider this area to be safe?:
+Do you consider this area to be safe?
+0    223
+1    150
+Name: count, dtype: int64
+
+surveillance_both_cctv_and_security_personnel:
+surveillance_both_cctv_and_security_personnel
+0    306
+1     67
+Name: count, dtype: int64
+
+surveillance_cctv_cameras:
+surveillance_cctv_cameras
+0    293
+1     80
+Name: count, dtype: int64
+
+surveillance_no_surveillance:
+surveillance_no_surveillance
+0    190
+1    183
+Name: count, dtype: int64
+
+surveillance_security_personnel:
+surveillance_security_personnel
+0    330
+1     43
+Name: count, dtype: int64
+
+smuggle_drug_smuggling:
+smuggle_drug_smuggling
+0    289
+1     84
+Name: count, dtype: int64
+
+smuggle_alcohol_smuggling:
+smuggle_alcohol_smuggling
+0    231
+1    142
+Name: count, dtype: int64
+
+smuggle_human_trafficking:
+smuggle_human_trafficking
+0    299
+1     74
+Name: count, dtype: int64
+
+smuggle_no_known_smuggling_activity:
+smuggle_no_known_smuggling_activity
+0    215
+1    158
+Name: count, dtype: int64
+
+What_type_of_uncrowded_area_is_located_nearby__Abandoned Building/Construction Site, Industrial Area:
+What_type_of_uncrowded_area_is_located_nearby__Abandoned Building/Construction Site, Industrial Area
+False    366
+True       7
+Name: count, dtype: int64
+
+What_type_of_uncrowded_area_is_located_nearby__Forest:
+What_type_of_uncrowded_area_is_located_nearby__Forest
+False    360
+True      13
+Name: count, dtype: int64
+
+What_type_of_uncrowded_area_is_located_nearby__Industrial Area:
+What_type_of_uncrowded_area_is_located_nearby__Industrial Area
+False    360
+True      13
+Name: count, dtype: int64
+
+What_type_of_uncrowded_area_is_located_nearby__Lake or River Bank:
+What_type_of_uncrowded_area_is_located_nearby__Lake or River Bank
+False    344
+True      29
+Name: count, dtype: int64
+
+What_type_of_uncrowded_area_is_located_nearby__No, There is no uncrowded area nearby:
+What_type_of_uncrowded_area_is_located_nearby__No, There is no uncrowded area nearby
+False    284
+True      89
+Name: count, dtype: int64
+
+What_type_of_uncrowded_area_is_located_nearby__Open Field:
+What_type_of_uncrowded_area_is_located_nearby__Open Field
+False    332
+True      41
+Name: count, dtype: int64
+
+What_type_of_uncrowded_area_is_located_nearby__Open Field, Abandoned Building/Construction Site:
+What_type_of_uncrowded_area_is_located_nearby__Open Field, Abandoned Building/Construction Site
+False    367
+True       6
+Name: count, dtype: int64
+
+What_type_of_uncrowded_area_is_located_nearby__Open Field, Lake or River Bank:
+What_type_of_uncrowded_area_is_located_nearby__Open Field, Lake or River Bank
+False    364
+True       9
+Name: count, dtype: int64
+
+What_type_of_uncrowded_area_is_located_nearby__Park or Garden:
+What_type_of_uncrowded_area_is_located_nearby__Park or Garden
+False    359
+True      14
+Name: count, dtype: int64
+
+What_type_of_uncrowded_area_is_located_nearby__other:
+What_type_of_uncrowded_area_is_located_nearby__other
+False    248
+True     125
+Name: count, dtype: int64
+
+What_transportation_facilities_are_available_in_the_area__Auto:
+What_transportation_facilities_are_available_in_the_area__Auto
+False    359
+True      14
+Name: count, dtype: int64
+
+What_transportation_facilities_are_available_in_the_area__Auto stand:
+What_transportation_facilities_are_available_in_the_area__Auto stand
+False    352
+True      21
+Name: count, dtype: int64
+
+What_transportation_facilities_are_available_in_the_area__Auto stand :
+What_transportation_facilities_are_available_in_the_area__Auto stand
+False    360
+True      13
+Name: count, dtype: int64
+
+What_transportation_facilities_are_available_in_the_area__Bus:
+What_transportation_facilities_are_available_in_the_area__Bus
+False    363
+True      10
+Name: count, dtype: int64
+
+What_transportation_facilities_are_available_in_the_area__Bus stop:
+What_transportation_facilities_are_available_in_the_area__Bus stop
+False    328
+True      45
+Name: count, dtype: int64
+
+What_transportation_facilities_are_available_in_the_area__Bus stop :
+What_transportation_facilities_are_available_in_the_area__Bus stop
+False    340
+True      33
+Name: count, dtype: int64
+
+What_transportation_facilities_are_available_in_the_area__Metro station :
+What_transportation_facilities_are_available_in_the_area__Metro station
+False    359
+True      14
+Name: count, dtype: int64
+
+What_transportation_facilities_are_available_in_the_area__No:
+What_transportation_facilities_are_available_in_the_area__No
+False    358
+True      15
+Name: count, dtype: int64
+
+What_transportation_facilities_are_available_in_the_area__Railway station :
+What_transportation_facilities_are_available_in_the_area__Railway station
+False    363
+True      10
+Name: count, dtype: int64
+
+What_transportation_facilities_are_available_in_the_area__other:
+What_transportation_facilities_are_available_in_the_area__other
+True     191
+False    182
+Name: count, dtype: int64
+
+What_communication_facilities_are_available_in_the_area__Internet :
+What_communication_facilities_are_available_in_the_area__Internet
+False    363
+True      10
+Name: count, dtype: int64
+
+What_communication_facilities_are_available_in_the_area__Internet availability :
+What_communication_facilities_are_available_in_the_area__Internet availability
+False    357
+True      16
+Name: count, dtype: int64
+
+What_communication_facilities_are_available_in_the_area__Internet availablity :
+What_communication_facilities_are_available_in_the_area__Internet availablity
+False    364
+True       9
+Name: count, dtype: int64
+
+What_communication_facilities_are_available_in_the_area__Mobile :
+What_communication_facilities_are_available_in_the_area__Mobile
+False    364
+True       9
+Name: count, dtype: int64
+
+What_communication_facilities_are_available_in_the_area__Mobile network :
+What_communication_facilities_are_available_in_the_area__Mobile network
+False    330
+True      43
+Name: count, dtype: int64
+
+What_communication_facilities_are_available_in_the_area__Mobile network coverage:
+What_communication_facilities_are_available_in_the_area__Mobile network coverage
+False    354
+True      19
+Name: count, dtype: int64
+
+What_communication_facilities_are_available_in_the_area__Mobile network coverage :
+What_communication_facilities_are_available_in_the_area__Mobile network coverage
+False    332
+True      41
+Name: count, dtype: int64
+
+What_communication_facilities_are_available_in_the_area__No:
+What_communication_facilities_are_available_in_the_area__No
+False    363
+True      10
+Name: count, dtype: int64
+
+What_communication_facilities_are_available_in_the_area__Public phone booths:
+What_communication_facilities_are_available_in_the_area__Public phone booths
+False    360
+True      13
+Name: count, dtype: int64
+
+What_communication_facilities_are_available_in_the_area__other:
+What_communication_facilities_are_available_in_the_area__other
+True     192
+False    181
+Name: count, dtype: int64
+
+
+EDA charts will be saved in: eda_charts/
+
+Charts saved. Review them for visual insights.
+
+
+====== PREDICTIVE ANALYSIS ======
+
+Random Forest Classifier - Accuracy: 0.85
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.91      0.88        46
+           1       0.85      0.76      0.80        29
+
+    accuracy                           0.85        75
+   macro avg       0.85      0.84      0.84        75
+weighted avg       0.85      0.85      0.85        75
+
+Confusion Matrix:
+ [[42  4]
+ [ 7 22]]
+Top features influencing 'area safety' predictions:
+
+Is this area is located to nearby police station?                      0.122204
+What best describes the condition of roads and traffic in the area?    0.086325
+Number of wine shops near to that area?                                0.070485
+Does the area have proper street lighting?                             0.066507
+What is the usual crowd level in this area?                            0.059241
+Is this area known for criminal activity?                              0.045477
+smuggle_no_known_smuggling_activity                                    0.044197
+dtype: float64
+
+====== PRESCRIPTIVE ANALYSIS ======
+
+Actionable Insights:
+- The most influential features for predicting area safety are: Is this area is located to nearby police station?, What best describes the condition of roads and traffic in the area?, Number of wine shops near to that area?.
+- To improve safety, focus on improving these aspects in at-risk areas.
+- For example, if 'Number of wine shops' or 'surveillance' features are high-impact, interventions here may yield better safety outcomes.
+
+PS C:\Users\tejav\OneDrive\Desktop\Ds using python for ai> python area_safety.py Titanic-Dataset.csv
+Loading data from Titanic-Dataset.csv ...
+
+Preprocessing complete. Columns after preprocessing:
+
+['PassengerId', 'Survived', 'Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare', 'Embarked', 'Name_Braund, Mr. Owen Harris', 'Name_Cumings, Mrs. John Bradley (Florence Briggs Thayer)', 'Name_Futrelle, Mrs. Jacques Heath (Lily May Peel)', 'Name_Heikkinen, Miss. Laina', 'Name_Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)', 'Name_McCarthy, Mr. Timothy J', 'Name_Moran, Mr. James', 'Name_Nasser, Mrs. Nicholas (Adele Achem)', 'Name_Palsson, Master. Gosta Leonard', 'Name_other', 'Ticket_1601', 'Ticket_3101295', 'Ticket_347077', 'Ticket_347082', 'Ticket_347088', 'Ticket_382652', 'Ticket_CA 2144', 'Ticket_CA. 2343', 'Ticket_S.O.C. 14879', 'Ticket_other', 'Cabin_C123', 'Cabin_C22 C26', 'Cabin_C23 C25 C27', 'Cabin_C83', 'Cabin_D', 'Cabin_E101', 'Cabin_F2', 'Cabin_F33', 'Cabin_G6', 'Cabin_other']
+
+====== DESCRIPTIVE ANALYSIS ======
+
+Dataset shape: 891 rows, 39 columns
+
+                                                    count unique    top freq  ...     25%      50%    75%       max
+PassengerId                                         891.0    NaN    NaN  NaN  ...   223.5    446.0  668.5     891.0    
+Survived                                            891.0    NaN    NaN  NaN  ...     0.0      0.0    1.0       1.0    
+Pclass                                              891.0    NaN    NaN  NaN  ...     2.0      3.0    3.0       3.0    
+Sex                                                 891.0    NaN    NaN  NaN  ...     0.0      1.0    1.0       1.0    
+Age                                                 714.0    NaN    NaN  NaN  ...  20.125     28.0   38.0      80.0    
+SibSp                                               891.0    NaN    NaN  NaN  ...     0.0      0.0    1.0       8.0    
+Parch                                               891.0    NaN    NaN  NaN  ...     0.0      0.0    0.0       6.0    
+Fare                                                891.0    NaN    NaN  NaN  ...  7.9104  14.4542   31.0  512.3292    
+Embarked                                            891.0    NaN    NaN  NaN  ...     1.0      2.0    2.0       2.0    
+Name_Braund, Mr. Owen Harris                          891      2  False  890  ...     NaN      NaN    NaN       NaN    
+Name_Cumings, Mrs. John Bradley (Florence Brigg...    891      2  False  890  ...     NaN      NaN    NaN       NaN    
+Name_Futrelle, Mrs. Jacques Heath (Lily May Peel)     891      2  False  890  ...     NaN      NaN    NaN       NaN    
+Name_Heikkinen, Miss. Laina                           891      2  False  890  ...     NaN      NaN    NaN       NaN    
+Name_Johnson, Mrs. Oscar W (Elisabeth Vilhelmin...    891      2  False  890  ...     NaN      NaN    NaN       NaN    
+Name_McCarthy, Mr. Timothy J                          891      2  False  890  ...     NaN      NaN    NaN       NaN    
+Name_Moran, Mr. James                                 891      2  False  890  ...     NaN      NaN    NaN       NaN    
+Name_Nasser, Mrs. Nicholas (Adele Achem)              891      2  False  890  ...     NaN      NaN    NaN       NaN    
+Name_Palsson, Master. Gosta Leonard                   891      2  False  890  ...     NaN      NaN    NaN       NaN    
+Name_other                                            891      2   True  881  ...     NaN      NaN    NaN       NaN    
+Ticket_1601                                           891      2  False  884  ...     NaN      NaN    NaN       NaN    
+Ticket_3101295                                        891      2  False  885  ...     NaN      NaN    NaN       NaN    
+Ticket_347077                                         891      2  False  887  ...     NaN      NaN    NaN       NaN    
+Ticket_347082                                         891      2  False  884  ...     NaN      NaN    NaN       NaN    
+Ticket_347088                                         891      2  False  885  ...     NaN      NaN    NaN       NaN    
+Ticket_382652                                         891      2  False  886  ...     NaN      NaN    NaN       NaN    
+Ticket_CA 2144                                        891      2  False  885  ...     NaN      NaN    NaN       NaN    
+Ticket_CA. 2343                                       891      2  False  884  ...     NaN      NaN    NaN       NaN    
+Ticket_S.O.C. 14879                                   891      2  False  886  ...     NaN      NaN    NaN       NaN    
+Ticket_other                                          891      2   True  834  ...     NaN      NaN    NaN       NaN    
+Cabin_C123                                            891      2  False  889  ...     NaN      NaN    NaN       NaN    
+Cabin_C22 C26                                         891      2  False  888  ...     NaN      NaN    NaN       NaN    
+Cabin_C23 C25 C27                                     891      2  False  887  ...     NaN      NaN    NaN       NaN    
+Cabin_C83                                             891      2  False  889  ...     NaN      NaN    NaN       NaN    
+Cabin_D                                               891      2  False  888  ...     NaN      NaN    NaN       NaN    
+Cabin_E101                                            891      2  False  888  ...     NaN      NaN    NaN       NaN    
+Cabin_F2                                              891      2  False  888  ...     NaN      NaN    NaN       NaN    
+Cabin_F33                                             891      2  False  888  ...     NaN      NaN    NaN       NaN    
+Cabin_G6                                              891      2  False  887  ...     NaN      NaN    NaN       NaN    
+Cabin_other                                           891      2   True  860  ...     NaN      NaN    NaN       NaN    
+
+[39 rows x 11 columns]
+
+Value counts for each column:
+
+PassengerId:
+PassengerId
+1      1
+2      1
+3      1
+4      1
+5      1
+      ..
+887    1
+888    1
+889    1
+890    1
+891    1
+Name: count, Length: 891, dtype: int64
+
+Survived:
+Survived
+0    549
+1    342
+Name: count, dtype: int64
+
+Pclass:
+Pclass
+3    491
+1    216
+2    184
+Name: count, dtype: int64
+
+Sex:
+Sex
+1    577
+0    314
+Name: count, dtype: int64
+
+Age:
+Age
+24.00    30
+22.00    27
+18.00    26
+28.00    25
+30.00    25
+         ..
+24.50     1
+0.67      1
+0.42      1
+34.50     1
+74.00     1
+Name: count, Length: 88, dtype: int64
+
+SibSp:
+SibSp
+0    608
+1    209
+2     28
+4     18
+3     16
+8      7
+5      5
+Name: count, dtype: int64
+
+Parch:
+Parch
+0    678
+1    118
+2     80
+5      5
+3      5
+4      4
+6      1
+Name: count, dtype: int64
+
+Fare:
+Fare
+8.0500     43
+13.0000    42
+7.8958     38
+7.7500     34
+26.0000    31
+           ..
+13.8583     1
+50.4958     1
+5.0000      1
+9.8458      1
+10.5167     1
+Name: count, Length: 248, dtype: int64
+
+Embarked:
+Embarked
+ 2    644
+ 0    168
+ 1     77
+-1      2
+Name: count, dtype: int64
+
+Name_Braund, Mr. Owen Harris:
+Name_Braund, Mr. Owen Harris
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Cumings, Mrs. John Bradley (Florence Briggs Thayer):
+Name_Cumings, Mrs. John Bradley (Florence Briggs Thayer)
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Futrelle, Mrs. Jacques Heath (Lily May Peel):
+Name_Futrelle, Mrs. Jacques Heath (Lily May Peel)
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Heikkinen, Miss. Laina:
+Name_Heikkinen, Miss. Laina
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg):
+Name_Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_McCarthy, Mr. Timothy J:
+Name_McCarthy, Mr. Timothy J
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Moran, Mr. James:
+Name_Moran, Mr. James
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Nasser, Mrs. Nicholas (Adele Achem):
+Name_Nasser, Mrs. Nicholas (Adele Achem)
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_Palsson, Master. Gosta Leonard:
+Name_Palsson, Master. Gosta Leonard
+False    890
+True       1
+Name: count, dtype: int64
+
+Name_other:
+Name_other
+True     881
+False     10
+Name: count, dtype: int64
+
+Ticket_1601:
+Ticket_1601
+False    884
+True       7
+Name: count, dtype: int64
+
+Ticket_3101295:
+Ticket_3101295
+False    885
+True       6
+Name: count, dtype: int64
+
+Ticket_347077:
+Ticket_347077
+False    887
+True       4
+Name: count, dtype: int64
+
+Ticket_347082:
+Ticket_347082
+False    884
+True       7
+Name: count, dtype: int64
+
+Ticket_347088:
+Ticket_347088
+False    885
+True       6
+Name: count, dtype: int64
+
+Ticket_382652:
+Ticket_382652
+False    886
+True       5
+Name: count, dtype: int64
+
+Ticket_CA 2144:
+Ticket_CA 2144
+False    885
+True       6
+Name: count, dtype: int64
+
+Ticket_CA. 2343:
+Ticket_CA. 2343
+False    884
+True       7
+Name: count, dtype: int64
+
+Ticket_S.O.C. 14879:
+Ticket_S.O.C. 14879
+False    886
+True       5
+Name: count, dtype: int64
+
+Ticket_other:
+Ticket_other
+True     834
+False     57
+Name: count, dtype: int64
+
+Cabin_C123:
+Cabin_C123
+False    889
+True       2
+Name: count, dtype: int64
+
+Cabin_C22 C26:
+Cabin_C22 C26
+False    888
+True       3
+Name: count, dtype: int64
+
+Cabin_C23 C25 C27:
+Cabin_C23 C25 C27
+False    887
+True       4
+Name: count, dtype: int64
+
+Cabin_C83:
+Cabin_C83
+False    889
+True       2
+Name: count, dtype: int64
+
+Cabin_D:
+Cabin_D
+False    888
+True       3
+Name: count, dtype: int64
+
+Cabin_E101:
+Cabin_E101
+False    888
+True       3
+Name: count, dtype: int64
+
+Cabin_F2:
+Cabin_F2
+False    888
+True       3
+Name: count, dtype: int64
+
+Cabin_F33:
+Cabin_F33
+False    888
+True       3
+Name: count, dtype: int64
+
+Cabin_G6:
+Cabin_G6
+False    887
+True       4
+Name: count, dtype: int64
+
+Cabin_other:
+Cabin_other
+True     860
+False     31
+Name: count, dtype: int64
+
+
+EDA charts will be saved in: eda_charts/
+
+Charts saved. Review them for visual insights.
+
+
+====== PREDICTIVE ANALYSIS ======
+
+Target column not found. Skipping predictive analysis.
+PS C:\Users\tejav\OneDrive\Desktop\Ds using python for ai>
+PS C:\Users\tejav\OneDrive\Desktop\Ds using python for ai>
